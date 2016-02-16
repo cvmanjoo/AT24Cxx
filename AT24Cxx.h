@@ -1,9 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /* 
  * File:   AT24Cxx.h
  * Author: Manjunath CV
@@ -14,13 +8,24 @@
 #ifndef AT24CXX_H
 #define AT24CXX_H
 
+#include <Arduino.h>
+
 class AT24Cxx {
 public:
-    AT24Cxx();
-    AT24Cxx(const AT24Cxx& orig);
-    virtual ~AT24Cxx();
-private:
+    AT24Cxx(uint8_t i2c_address);
+    AT24Cxx(uint8_t i2c_address, uint8_t eeprom_size);
+    uint8_t read(uint16_t address);
+    void write(uint16_t address, uint8_t value);
+    void update(uint16_t address, uint8_t value);
+	uint16_t length(void);
+    //void get();
+    //void put();
+    //AT24Cxx(const AT24Cxx& orig);
+    //virtual ~AT24Cxx();
 
+protected:
+    uint8_t eeprom_size;
+	uint8_t i2c_address;
 };
 
 #endif /* AT24CXX_H */
