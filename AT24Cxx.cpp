@@ -39,8 +39,6 @@ uint8_t AT24Cxx::read(uint16_t address)
 	delay(10);
 	
 	data = Wire.read();
-	//data = 'A';
-	//Serial.write(Wire.read());
 	delay(10);
 	
 	return data;
@@ -57,7 +55,7 @@ void AT24Cxx::write(uint16_t address, uint8_t value)
 	Wire.write(first);      //First Word Address
 	Wire.write(second);      //Second Word Address
 
-	Wire.write(value);      //Write an 'A'
+	Wire.write(value);     
 
 	delay(10);
 
@@ -97,7 +95,7 @@ void AT24Cxx::update(uint16_t address, uint8_t value)
 		Wire.write(first);      //First Word Address
 		Wire.write(second);      //Second Word Address
 
-		Wire.write(value);      //Write an 'A'
+		Wire.write(value);
 
 		delay(10);
 

@@ -17,7 +17,7 @@ public:
     uint8_t read(uint16_t address);
     void write(uint16_t address, uint8_t value);
     void update(uint16_t address, uint8_t value);
-	uint16_t length(void);
+	  uint16_t length(void);
     //void get();
     //void put();
     //AT24Cxx(const AT24Cxx& orig);
