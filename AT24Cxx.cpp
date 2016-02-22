@@ -106,9 +106,9 @@ void AT24Cxx::update(uint16_t address, uint8_t value)
 
 uint16_t AT24Cxx::length()
 {
-	return eeprom_size * 1024;
-	
+	return eeprom_size * 1024;	
 }
+
 
 /*
 AT24Cxx::AT24Cxx(const AT24Cxx& orig) {
